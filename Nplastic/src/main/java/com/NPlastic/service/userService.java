@@ -1,18 +1,20 @@
 package com.NPlastic.service;
 
 import com.NPlastic.Entity.User;
+import com.NPlastic.dto.UserRequestDTO;
+import com.NPlastic.dto.UserResponseDTO;
 
 import java.util.List;
 
 public interface userService {
 
-    public  User create(User user);
+    public UserResponseDTO create(UserRequestDTO userRequestDTOer);
 
-    public User update(User user);
+    public UserResponseDTO update(UserRequestDTO userRequestDTO);
 
-    public List<User> ListarUser();
+    public List<UserResponseDTO> ListarUser();
 
     public void deletarUser(int id);
 
-    public User BuscarPorID(int id);
+    public UserResponseDTO BuscarPorID(int id);
 }

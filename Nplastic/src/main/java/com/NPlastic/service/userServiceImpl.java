@@ -1,6 +1,9 @@
 package com.NPlastic.service;
 
 import com.NPlastic.Entity.User;
+import com.NPlastic.dto.UserRequestDTO;
+import com.NPlastic.dto.UserResponseDTO;
+import com.NPlastic.mapper.Usermapper;
 import com.NPlastic.repository.userRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -15,19 +18,26 @@ public class userServiceImpl implements  userService{
     private userRepository repository;
 
 
+    private Usermapper usermapper;
+
     @Override
-    public User create(User user) {
-        return repository.save(user);
+    public UserResponseDTO create(UserRequestDTO userRequestDTO) {
+        User user  = usermapper.convertToUser(userRequestDTO);
+
+        return  usermapper.convertToResponse(repository.save(user));
     }
 
     @Override
-    public User update(User user) {
-        return repository.save(user);
+    public UserResponseDTO update(UserRequestDTO userRequestDTO) {
+
+        User user = usermapper.convertToUser(userRequestDTO);
+
+        return usermapper.convertToResponse(repository.save(user));
     }
 
     @Override
-    public List<User> ListarUser() {
-        return (List<User>) repository.findAll();
+    public List<UserResponseDTO> ListarUser() {
+        return usermapper.convertListResponse((List<User>) repository.findAll());
     }
 
     @Override
@@ -36,7 +46,8 @@ public class userServiceImpl implements  userService{
     }
 
     @Override
-    public User BuscarPorID(int id) {
-        return repository.findById(id).orElse(null);
+    public UserResponseDTO BuscarPorID(int id) {
+
+        return usermapper.convertToResponse(repository.findById(id).orElse(null));
     }
 }

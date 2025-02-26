@@ -14,7 +14,8 @@ public class UserResponseDTO {
 
     private LocalDate data;
 
-
+    public UserResponseDTO() {
+    }
 
     public String getNome() {
         return nome;

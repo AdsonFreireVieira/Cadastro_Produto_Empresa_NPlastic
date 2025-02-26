@@ -3,6 +3,7 @@ package com.NPlastic.controllers;
 import com.NPlastic.dto.UserRequestDTO;
 import com.NPlastic.dto.UserResponseDTO;
 import com.NPlastic.service.userService;
+import com.NPlastic.service.userServiceImpl;
 import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class userControllers {
 
     @Autowired
-    private userService service;
+    private userServiceImpl service;
 
     @PostMapping
     public  ResponseEntity<UserResponseDTO> criarUser(@RequestBody UserRequestDTO userRequestDTO) {

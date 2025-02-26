@@ -6,38 +6,37 @@ import com.NPlastic.dto.UserResponseDTO;
 import com.NPlastic.mapper.Usermapper;
 import com.NPlastic.repository.userRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Service
+@Component
 public class userServiceImpl implements  userService{
 
     @Autowired
     private userRepository repository;
 
 
-    private Usermapper usermapper;
 
     @Override
     public UserResponseDTO create(UserRequestDTO userRequestDTO) {
-        User user  = usermapper.convertToUser(userRequestDTO);
 
-        return  usermapper.convertToResponse(repository.save(user));
+        User user = Usermapper.INSTANCE.toUSer(userRequestDTO);
+
+        return Usermapper.INSTANCE.toResponseDto(user);
     }
 
     @Override
     public UserResponseDTO update(UserRequestDTO userRequestDTO) {
 
-        User user = usermapper.convertToUser(userRequestDTO);
 
-        return usermapper.convertToResponse(repository.save(user));
+
+        return null;
     }
 
     @Override
     public List<UserResponseDTO> ListarUser() {
-        return usermapper.convertListResponse((List<User>) repository.findAll());
+        return null;
     }
 
     @Override
@@ -48,6 +47,6 @@ public class userServiceImpl implements  userService{
     @Override
     public UserResponseDTO BuscarPorID(int id) {
 
-        return usermapper.convertToResponse(repository.findById(id).orElse(null));
+        return null;
     }
 }

@@ -8,6 +8,8 @@
 		<version>3.4.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
+
 	<groupId>com.NPlastic</groupId>
 	<artifactId>Nplastic</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -27,6 +29,7 @@
 		<url/>
 	</scm>
 	<properties>
+		<org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
@@ -45,16 +48,14 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>${org.mapstruct.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<!-- MapStruct Core -->
-		<dependency>
-			<groupId>org.mapstruct</groupId>
-			<artifactId>mapstruct</artifactId>
-			<version>1.6.2</version> <!-- Use sempre a versão mais recente -->
-
 		</dependency>
 	</dependencies>
 

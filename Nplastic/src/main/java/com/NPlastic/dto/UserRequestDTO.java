@@ -16,7 +16,8 @@ public class UserRequestDTO {
 
     private LocalDate data;
 
-
+    public UserRequestDTO() {
+    }
 
     public String getNome() {
         return nome;

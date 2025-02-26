@@ -4,18 +4,19 @@ import com.NPlastic.Entity.User;
 import com.NPlastic.dto.UserRequestDTO;
 import com.NPlastic.dto.UserResponseDTO;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
+
 
 import java.util.List;
 
 @Mapper(componentModel = "spring")
-public interface  Usermapper{
+public interface  Usermapper {
 
-    Usermapper mapper = Mappers.getMapper(Usermapper.class);
+        Usermapper  INSTANCE= Mappers.getMapper(Usermapper.class);
 
-    User convertToUser(UserRequestDTO userRequestDTO) ;
+    User toUSer(UserRequestDTO userRequestDTO);
 
-    UserResponseDTO convertToResponse(User user);
+     UserResponseDTO toResponseDto(User user);
 
-    List<UserResponseDTO>  convertListResponse(List<User> userList);
 }

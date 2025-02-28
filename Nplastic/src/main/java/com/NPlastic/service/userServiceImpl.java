@@ -23,7 +23,7 @@ public class userServiceImpl implements  userService{
 
         User user = Usermapper.INSTANCE.toUSer(userRequestDTO);
 
-        return Usermapper.INSTANCE.toResponseDto(user);
+        return Usermapper.INSTANCE.toResponseDto(repository.save(user));
     }
 
     @Override
@@ -46,6 +46,6 @@ public class userServiceImpl implements  userService{
     @Override
     public UserResponseDTO BuscarPorID(int id) {
 
-        return null;
+        return Usermapper.INSTANCE.toResponseDto(repository.findById(id).orElse(null));
     }
 }

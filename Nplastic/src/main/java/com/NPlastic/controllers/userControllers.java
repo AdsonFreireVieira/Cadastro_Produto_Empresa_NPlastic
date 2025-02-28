@@ -29,8 +29,8 @@ public class userControllers {
 
     }
 
-    @PutMapping("/id")
-    public ResponseEntity<UserResponseDTO> updateUSer(@RequestBody UserRequestDTO userRequestDTO, int id) {
+    @PutMapping("/{id}")
+    public ResponseEntity<UserResponseDTO> updateUSer(@RequestBody UserRequestDTO userRequestDTO, @PathVariable int id) {
 
         userRequestDTO.setId(id);
         if (userRequestDTO != null) {
@@ -44,6 +44,18 @@ public class userControllers {
     public ResponseEntity <List<UserResponseDTO>> listarTodos(){
 
         return ResponseEntity.ok().body(service.ListarUser());
+      }
+
+      @GetMapping("/{id}")
+    public ResponseEntity<UserResponseDTO> buscarPorId(@PathVariable int id){
+
+       return  ResponseEntity.ok().body(service.BuscarPorID(id));
+        }
+     @DeleteMapping("/{id}")
+    public void DeletarUSer(@PathVariable int id){
+        service.deletarUser(id);
+
+
       }
     }
 

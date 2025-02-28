@@ -10,6 +10,7 @@ import org.springframework.data.repository.query.parser.Part;
 
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Mapper(componentModel = "spring")
 public interface  Usermapper {
@@ -31,4 +32,14 @@ public interface  Usermapper {
     @Mapping(source = "data",target = "data")
      UserResponseDTO toResponseDto(User user);
 
-}
+
+     List<UserResponseDTO> toListResponseDto(List<User> userList);
+
+        }
+
+
+
+
+
+
+

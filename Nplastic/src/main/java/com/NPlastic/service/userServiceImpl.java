@@ -29,14 +29,13 @@ public class userServiceImpl implements  userService{
     @Override
     public UserResponseDTO update(UserRequestDTO userRequestDTO) {
 
-
-
-        return null;
+    User user = Usermapper.INSTANCE.toUSer(userRequestDTO);
+        return Usermapper.INSTANCE.toResponseDto(repository.save(user));
     }
 
     @Override
     public List<UserResponseDTO> ListarUser() {
-        return null;
+        return Usermapper.INSTANCE.toListResponseDto((List<User>) repository.findAll());
     }
 
     @Override

@@ -7,10 +7,9 @@ import com.NPlastic.service.userServiceImpl;
 import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/users")
@@ -20,17 +19,33 @@ public class userControllers {
     private userServiceImpl service;
 
     @PostMapping
-    public  ResponseEntity<UserResponseDTO> criarUser(@RequestBody UserRequestDTO userRequestDTO) {
+    public ResponseEntity<UserResponseDTO> criarUser(@RequestBody UserRequestDTO userRequestDTO) {
 
-        if(userRequestDTO != null){
+        if (userRequestDTO != null) {
 
-        return  ResponseEntity.ok().body( service.create(userRequestDTO));
+            return ResponseEntity.ok().body(service.create(userRequestDTO));
         }
         return ResponseEntity.notFound().build();
 
+    }
 
+    @PutMapping("/id")
+    public ResponseEntity<UserResponseDTO> updateUSer(@RequestBody UserRequestDTO userRequestDTO, int id) {
+
+        userRequestDTO.setId(id);
+        if (userRequestDTO != null) {
+
+            return ResponseEntity.ok().body(service.update(userRequestDTO));
+        }
+
+        return ResponseEntity.notFound().build();
+      }
+      @GetMapping
+    public ResponseEntity <List<UserResponseDTO>> listarTodos(){
+
+        return ResponseEntity.ok().body(service.ListarUser());
+      }
     }
 
 
     
-}

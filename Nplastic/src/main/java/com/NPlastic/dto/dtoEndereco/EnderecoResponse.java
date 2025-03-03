@@ -2,7 +2,7 @@ package com.NPlastic.dto.dtoEndereco;
 
 import com.NPlastic.Entity.User;
 
-public class ResponseEndereco {
+public class EnderecoResponse {
 
 
 

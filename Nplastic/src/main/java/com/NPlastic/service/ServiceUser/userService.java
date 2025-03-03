@@ -1,5 +1,8 @@
 package com.NPlastic.service.ServiceUser;
 
+import com.NPlastic.dto.dtoUser.UserRequestDTO;
+import com.NPlastic.dto.dtoUser.UserResponseDTO;
+
 import java.util.List;
 
 public interface userService {

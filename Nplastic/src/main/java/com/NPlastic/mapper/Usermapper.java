@@ -1,16 +1,14 @@
 package com.NPlastic.mapper;
 
 import com.NPlastic.Entity.User;
-import com.NPlastic.dto.UserRequestDTO;
-import com.NPlastic.dto.UserResponseDTO;
+import com.NPlastic.dto.dtoUser.UserRequestDTO;
+import com.NPlastic.dto.dtoUser.UserResponseDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
-import org.springframework.data.repository.query.parser.Part;
 
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Mapper(componentModel = "spring")
 public interface  Usermapper {
@@ -30,7 +28,7 @@ public interface  Usermapper {
     @Mapping(source = "telefone",target = "telefone")
     @Mapping(source = "senha",target = "senha")
     @Mapping(source = "data",target = "data")
-     UserResponseDTO toResponseDto(User user);
+    UserResponseDTO toResponseDto(User user);
 
 
      List<UserResponseDTO> toListResponseDto(List<User> userList);

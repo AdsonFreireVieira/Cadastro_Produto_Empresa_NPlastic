@@ -1,10 +1,8 @@
-package com.NPlastic.dto;
+package com.NPlastic.dto.dtoUser;
 
 import java.time.LocalDate;
 
-public class UserRequestDTO {
-
-    private Integer id;
+public class UserResponseDTO {
 
     private String nome;
 
@@ -16,7 +14,15 @@ public class UserRequestDTO {
 
     private LocalDate data;
 
-    public UserRequestDTO() {
+    public UserResponseDTO(String nome, String email, String telefone, String senha, LocalDate data) {
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+        this.senha = senha;
+        this.data = data;
+    }
+
+    public UserResponseDTO() {
     }
 
     public String getNome() {
@@ -57,13 +63,5 @@ public class UserRequestDTO {
 
     public void setData(LocalDate data) {
         this.data = data;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 }

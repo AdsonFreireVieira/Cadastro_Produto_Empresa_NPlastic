@@ -1,8 +1,8 @@
-package com.NPlastic.service;
+package com.NPlastic.service.ServiceUser;
 
 import com.NPlastic.Entity.User;
-import com.NPlastic.dto.UserRequestDTO;
-import com.NPlastic.dto.UserResponseDTO;
+import com.NPlastic.dto.dtoUser.UserRequestDTO;
+import com.NPlastic.dto.dtoUser.UserResponseDTO;
 import com.NPlastic.mapper.Usermapper;
 import com.NPlastic.repository.userRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class userServiceImpl implements  userService{
+public class userServiceImpl implements userService {
 
     @Autowired
     private userRepository repository;

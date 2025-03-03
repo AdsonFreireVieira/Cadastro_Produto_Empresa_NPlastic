@@ -1,8 +1,4 @@
-package com.NPlastic.service;
-
-import com.NPlastic.Entity.User;
-import com.NPlastic.dto.UserRequestDTO;
-import com.NPlastic.dto.UserResponseDTO;
+package com.NPlastic.service.ServiceUser;
 
 import java.util.List;
 

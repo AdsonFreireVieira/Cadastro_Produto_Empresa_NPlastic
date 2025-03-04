@@ -7,25 +7,29 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
-@Mapper(componentModel = "spring", uses = {Usermapper.class})
+import java.util.List;
+
+@Mapper(componentModel = "spring", uses = {Clientesmapper.class})
 public interface EnderecoMapper {
 
-   EnderecoMapper INSTANCE =  Mappers.getMapper(EnderecoMapper.class);
-    @Mapping(source = "id",target = "id")
-    @Mapping(source = "numero",target = "numero")
-    @Mapping(source = "cep",target = "cep")
-    @Mapping(source = "cidade",target = "cidade")
-    @Mapping(source = "bairro",target = "bairro")
-    @Mapping(source = "user", target = "user")
+ EnderecoMapper INSTANCE = Mappers.getMapper(EnderecoMapper.class);
 
-    Endereco toEndereco(EnderecoRequest request);
+ @Mapping(source = "id", target = "id")
+ @Mapping(source = "numero", target = "numero")
+ @Mapping(source = "cep", target = "cep")
+ @Mapping(source = "cidade", target = "cidade")
+ @Mapping(source = "bairro", target = "bairro")
+ @Mapping(source = "cliente", target = "cliente")
+ Endereco toEndereco(EnderecoRequest request);
 
 
-    @Mapping(source = "numero",target = "numero")
-    @Mapping(source = "cep",target = "cep")
-    @Mapping(source = "cidade",target = "cidade")
-    @Mapping(source = "bairro",target = "bairro")
-    @Mapping(source = "user", target = "user")
+ @Mapping(source = "numero", target = "numero")
+ @Mapping(source = "cep", target = "cep")
+ @Mapping(source = "cidade", target = "cidade")
+ @Mapping(source = "bairro", target = "bairro")
+ @Mapping(source = "cliente", target = "cliente")
+ EnderecoResponse toResponse(Endereco endereco);
 
-    EnderecoResponse toResponse(Endereco endereco);
+ List<EnderecoResponse> toListResponse(List<Endereco> enderecoList);
+
 }

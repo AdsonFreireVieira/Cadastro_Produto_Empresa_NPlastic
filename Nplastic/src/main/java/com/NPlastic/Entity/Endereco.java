@@ -22,7 +22,10 @@ public class Endereco {
 
     private String estado;
 
-    private User user;
+    @ManyToOne
+    @JoinColumn(name = "Cliente_id")
+    private Clientes cliente;
+
 
     public Endereco() {
     }
@@ -75,11 +78,11 @@ public class Endereco {
         this.estado = estado;
     }
 
-    public User getUser() {
-        return user;
+    public Clientes getCliente() {
+        return cliente;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setCliente(Clientes cliente) {
+        this.cliente = cliente;
     }
 }

@@ -1,40 +1,28 @@
-package com.NPlastic.Entity;
-
-import jakarta.persistence.*;
+package com.NPlastic.dto.dtoUser;
 
 import java.time.LocalDate;
 
-@Entity
-@Table(name="tbl_user")
-public class User {
+public class ClientesResponseDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
-    private Integer id;
-
-    @Column
     private String nome;
 
-    @Column
     private String email;
 
-    @Column
     private String telefone;
 
-    @Column
     private String senha;
 
-    @Column
     private LocalDate data;
 
-
-    public Integer getId() {
-        return id;
+    public ClientesResponseDTO(String nome, String email, String telefone, String senha, LocalDate data) {
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+        this.senha = senha;
+        this.data = data;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public ClientesResponseDTO() {
     }
 
     public String getNome() {

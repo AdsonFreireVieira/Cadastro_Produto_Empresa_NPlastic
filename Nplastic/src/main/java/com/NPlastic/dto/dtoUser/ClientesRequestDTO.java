@@ -2,7 +2,9 @@ package com.NPlastic.dto.dtoUser;
 
 import java.time.LocalDate;
 
-public class UserResponseDTO {
+public class ClientesRequestDTO {
+
+    private Integer id;
 
     private String nome;
 
@@ -14,15 +16,7 @@ public class UserResponseDTO {
 
     private LocalDate data;
 
-    public UserResponseDTO(String nome, String email, String telefone, String senha, LocalDate data) {
-        this.nome = nome;
-        this.email = email;
-        this.telefone = telefone;
-        this.senha = senha;
-        this.data = data;
-    }
-
-    public UserResponseDTO() {
+    public ClientesRequestDTO() {
     }
 
     public String getNome() {
@@ -63,5 +57,13 @@ public class UserResponseDTO {
 
     public void setData(LocalDate data) {
         this.data = data;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

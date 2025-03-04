@@ -1,6 +1,5 @@
 package com.NPlastic.service.ServiceEndereco;
 
-import com.NPlastic.Entity.Endereco;
 import com.NPlastic.dto.dtoEndereco.EnderecoRequest;
 import com.NPlastic.dto.dtoEndereco.EnderecoResponse;
 
@@ -12,9 +11,9 @@ public interface IEndereco {
 
     public EnderecoResponse atualizarEndereco(EnderecoRequest request);
 
-    public List<Endereco> listarEndereco();
+    public List<EnderecoResponse> listarEndereco();
 
-    public Endereco BuscarPorId( int id);
+    public EnderecoResponse BuscarPorId(int id);
 
-    public void deletarEndereco();
+    public void deletarEndereco(int id);
 }

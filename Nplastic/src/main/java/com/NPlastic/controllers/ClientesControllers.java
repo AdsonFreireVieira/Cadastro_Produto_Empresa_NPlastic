@@ -1,9 +1,10 @@
 package com.NPlastic.controllers;
 
-import com.NPlastic.dto.dtoUser.UserRequestDTO;
-import com.NPlastic.dto.dtoUser.UserResponseDTO;
-import com.NPlastic.service.ServiceUser.userServiceImpl;
 
+
+import com.NPlastic.dto.dtoUser.ClientesRequestDTO;
+import com.NPlastic.dto.dtoUser.ClientesResponseDTO;
+import com.NPlastic.service.ServiceUser.ClientesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,21 +14,20 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/users")
-public class userControllers {
+public class ClientesControllers {
 
     @Autowired
-    private userServiceImpl service;
-
+    private ClientesService service;
     @PostMapping
-    public ResponseEntity<UserResponseDTO> criarUser(@RequestBody UserRequestDTO userRequestDTO) {
+    public ResponseEntity<ClientesResponseDTO> criarUser(@RequestBody ClientesRequestDTO clientesRequestDTO) {
 
-        if (userRequestDTO != null) {
+        if (clientesRequestDTO != null) {
 
-            UserResponseDTO userResponseDTO = service.create(userRequestDTO);
+            ClientesResponseDTO userResponseDTO = service.criar(clientesRequestDTO);
 
             return ResponseEntity.created(ServletUriComponentsBuilder.fromCurrentRequest()
                             .path("/{id}")
-                            .buildAndExpand(userRequestDTO.getId())
+                            .buildAndExpand(clientesRequestDTO.getId())
                             .toUri())
                     .body(userResponseDTO);
 
@@ -36,25 +36,25 @@ public class userControllers {
         return ResponseEntity.notFound().build();
 }
         @PutMapping("/{id}")
-        public ResponseEntity<UserResponseDTO> updateUSer (@RequestBody UserRequestDTO userRequestDTO,
+        public ResponseEntity<ClientesResponseDTO> updateUSer (@RequestBody ClientesRequestDTO clientesRequestDTO,
         @PathVariable int id){
 
-            userRequestDTO.setId(id);
-            if (userRequestDTO != null) {
+            clientesRequestDTO.setId(id);
+            if (clientesRequestDTO != null) {
 
-                return ResponseEntity.ok().body(service.update(userRequestDTO));
+                return ResponseEntity.ok().body(service.update(clientesRequestDTO));
             }
 
             return ResponseEntity.notFound().build();
         }
         @GetMapping
-        public ResponseEntity<List<UserResponseDTO>> listarTodos() {
+        public ResponseEntity<List<ClientesResponseDTO>> listarTodos() {
 
             return ResponseEntity.ok().body(service.ListarUser());
         }
 
         @GetMapping("/{id}")
-        public ResponseEntity<UserResponseDTO> buscarPorId (@PathVariable int id){
+        public ResponseEntity<ClientesResponseDTO> buscarPorId (@PathVariable int id){
 
             return ResponseEntity.ok().body(service.BuscarPorID(id));
         }

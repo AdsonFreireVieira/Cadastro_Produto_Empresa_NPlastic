@@ -1,22 +1,44 @@
-package com.NPlastic.dto.dtoUser;
+package com.NPlastic.Entity;
+
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
-public class UserRequestDTO {
+@Entity
+@Table(name="tbl_Clientes")
+public class Clientes {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Column
     private Integer id;
 
+    @Column
     private String nome;
 
+    @Column
     private String email;
 
+    @Column
     private String telefone;
 
+    @Column
     private String senha;
 
+    @Column
     private LocalDate data;
 
-    public UserRequestDTO() {
+    @OneToMany(mappedBy = "cliente",cascade = CascadeType.ALL)
+   private List<Endereco> endereco;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -57,13 +79,5 @@ public class UserRequestDTO {
 
     public void setData(LocalDate data) {
         this.data = data;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 }

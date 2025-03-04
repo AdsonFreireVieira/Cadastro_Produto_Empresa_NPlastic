@@ -13,7 +13,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/clientes")
 public class ClientesControllers {
 
     @Autowired

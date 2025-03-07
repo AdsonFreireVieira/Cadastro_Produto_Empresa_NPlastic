@@ -11,7 +11,7 @@ import org.mapstruct.Mapping;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring",uses = {ProdutoRequest.class, PedidoRequest.class})
+@Mapper(componentModel = "spring",uses = {ProdutoMapper.class, PedidoMapper.class})
 public interface ItensMapper {
     @Mapping(source = "id_Itens", target = "id_Itens")
     @Mapping(source = "quantidade", target = "quantidade")
@@ -31,5 +31,9 @@ public interface ItensMapper {
 
     Itens_Response convertToItensResponse(Itens_Pedido itensPedido);
 
+    @Mapping(source = "quantidade", target = "quantidade")
+    @Mapping(source = "totalItens", target = "valorItens")
+    @Mapping(source = "produto", target = "produto")
+    @Mapping(source = "pedido", target = "pedido")
     List<Itens_Response> convertToListResponse(List<Itens_Pedido> itens_pedidoList);
 }

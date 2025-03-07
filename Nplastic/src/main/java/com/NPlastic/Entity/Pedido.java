@@ -23,4 +23,35 @@ public class Pedido {
     @OneToMany(mappedBy = "pedido",cascade = CascadeType.ALL)
     private List<Itens_Pedido> itens;
 
+    public Integer getId() {
+        return Id;
+    }
+
+    public void setId(Integer id) {
+        Id = id;
+    }
+
+    public LocalDate getData() {
+        return data;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public List<Itens_Pedido> getItens() {
+        return itens;
+    }
+
+    public void setItens(List<Itens_Pedido> itens) {
+        this.itens = itens;
+    }
 }

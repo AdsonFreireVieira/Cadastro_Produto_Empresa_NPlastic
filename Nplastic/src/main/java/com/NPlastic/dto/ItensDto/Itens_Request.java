@@ -1,33 +1,27 @@
-package com.NPlastic.Entity;
+package com.NPlastic.dto.ItensDto;
 
-import jakarta.persistence.*;
+import com.NPlastic.Entity.Pedido;
+import com.NPlastic.Entity.Produto;
+import jakarta.persistence.Column;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
-import java.util.List;
-@Entity
-@Table(name = "tbl_Itens")
-public class Itens_Pedido {
+public class Itens_Request {
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
-    @Column
     private Integer id_Itens;
 
-    @Column
     private int quantidade;
 
-    @Column
     private  int totalItens;
 
-    @Column
     private double valorItens;
 
-   @ManyToOne
-   @JoinColumn(name ="id_Produto")
-   private Produto produto;
+    private Produto produto;
 
-   @ManyToOne
-   @JoinColumn(name = "Pedido")
-   private Pedido pedido;
+    private Pedido pedido;
+
+    public Itens_Request() {
+    }
 
     public Integer getId_Itens() {
         return id_Itens;
@@ -60,4 +54,23 @@ public class Itens_Pedido {
     public void setValorItens(double valorItens) {
         this.valorItens = valorItens;
     }
+
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
+
+    public Pedido getPedido() {
+        return pedido;
+    }
+
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
+    }
+
+
+
 }

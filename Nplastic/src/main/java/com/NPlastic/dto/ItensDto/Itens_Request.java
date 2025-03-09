@@ -1,12 +1,6 @@
 package com.NPlastic.dto.ItensDto;
-
-import com.NPlastic.Entity.Pedido;
-import com.NPlastic.Entity.Produto;
 import com.NPlastic.dto.DtoPedido.PedidoRequest;
 import com.NPlastic.dto.dtoProduto.ProdutoRequest;
-import jakarta.persistence.Column;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 
 public class Itens_Request {
 
@@ -59,6 +53,14 @@ public class Itens_Request {
 
     public ProdutoRequest getProdutoRequest() {
         return produtoRequest;
+    }
+
+    public PedidoRequest getPedidoRequest() {
+        return pedidoRequest;
+    }
+
+    public void setPedidoRequest(PedidoRequest pedidoRequest) {
+        this.pedidoRequest = pedidoRequest;
     }
 
     public void setProdutoRequest(ProdutoRequest produtoRequest) {

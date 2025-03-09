@@ -2,8 +2,7 @@ package com.NPlastic.dto.DtoPedido;
 
 
 import com.NPlastic.Entity.Clientes;
-import com.NPlastic.Entity.Itens_Pedido;
-import jakarta.persistence.*;
+import com.NPlastic.dto.ItensDto.Itens_Request;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -17,7 +16,7 @@ public class PedidoRequest {
    private String status;
 
 
-    private List<Itens_Pedido> itens;
+    private List<Itens_Request> itensRequestList;
 
     private Clientes clientes;
 
@@ -48,12 +47,12 @@ public class PedidoRequest {
         this.status = status;
     }
 
-    public List<Itens_Pedido> getItens() {
-        return itens;
+    public List<Itens_Request> getItensRequestList() {
+        return itensRequestList;
     }
 
-    public void setItens(List<Itens_Pedido> itens) {
-        this.itens = itens;
+    public void setItensRequestList(List<Itens_Request> itensRequestList) {
+        this.itensRequestList = itensRequestList;
     }
 
     public Clientes getClientes() {

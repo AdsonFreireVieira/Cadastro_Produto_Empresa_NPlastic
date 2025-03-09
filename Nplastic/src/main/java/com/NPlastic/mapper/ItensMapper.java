@@ -1,11 +1,8 @@
 package com.NPlastic.mapper;
 
 import com.NPlastic.Entity.Itens_Pedido;
-import com.NPlastic.Entity.Pedido;
-import com.NPlastic.dto.DtoPedido.PedidoRequest;
 import com.NPlastic.dto.ItensDto.Itens_Request;
 import com.NPlastic.dto.ItensDto.Itens_Response;
-import com.NPlastic.dto.dtoProduto.ProdutoRequest;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
@@ -24,11 +21,10 @@ public interface ItensMapper {
 
     Itens_Pedido convertToItens(Itens_Request itensRequest);
 
-    @Mapping(source = "id_Itens", target = "id_Itens")
     @Mapping(source = "quantidade", target = "quantidade")
     @Mapping(source = "totalItens", target = "valorItens")
-    @Mapping(source = "produtoResponse", target = "produto")
-    @Mapping(source = "pedidoResponse", target = "pedido")
+    @Mapping(source = "produto", target = "produtoResponse")
+    @Mapping(source = "pedido", target = "pedidoResponse")
 
     Itens_Response convertToItensResponse(Itens_Pedido itensPedido);
 

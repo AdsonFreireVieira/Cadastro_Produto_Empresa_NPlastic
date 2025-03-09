@@ -29,6 +29,22 @@ public class Itens_Pedido {
    @JoinColumn(name = "Pedido")
    private Pedido pedido;
 
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
+
+    public Pedido getPedido() {
+        return pedido;
+    }
+
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
+    }
+
     public Integer getId_Itens() {
         return id_Itens;
     }

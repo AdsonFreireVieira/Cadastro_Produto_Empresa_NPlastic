@@ -2,6 +2,8 @@ package com.NPlastic.dto.ItensDto;
 
 import com.NPlastic.Entity.Pedido;
 import com.NPlastic.Entity.Produto;
+import com.NPlastic.dto.DtoPedido.PedidoRequest;
+import com.NPlastic.dto.dtoProduto.ProdutoRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -16,9 +18,9 @@ public class Itens_Request {
 
     private double valorItens;
 
-    private Produto produto;
+    private ProdutoRequest produtoRequest;
 
-    private Pedido pedido;
+    private PedidoRequest pedidoRequest;
 
     public Itens_Request() {
     }
@@ -55,22 +57,11 @@ public class Itens_Request {
         this.valorItens = valorItens;
     }
 
-    public Produto getProduto() {
-        return produto;
+    public ProdutoRequest getProdutoRequest() {
+        return produtoRequest;
     }
 
-    public void setProduto(Produto produto) {
-        this.produto = produto;
+    public void setProdutoRequest(ProdutoRequest produtoRequest) {
+        this.produtoRequest = produtoRequest;
     }
-
-    public Pedido getPedido() {
-        return pedido;
-    }
-
-    public void setPedido(Pedido pedido) {
-        this.pedido = pedido;
-    }
-
-
-
 }

@@ -8,32 +8,29 @@ import com.NPlastic.dto.ItensDto.Itens_Response;
 import com.NPlastic.dto.dtoProduto.ProdutoRequest;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 
 @Mapper(componentModel = "spring",uses = {ProdutoMapper.class, PedidoMapper.class})
 public interface ItensMapper {
+
+    ItensMapper INSTANCE = Mappers.getMapper(ItensMapper.class);
     @Mapping(source = "id_Itens", target = "id_Itens")
     @Mapping(source = "quantidade", target = "quantidade")
     @Mapping(source = "totalItens", target = "valorItens")
-    @Mapping(source = "produto", target = "produto")
-    @Mapping(source = "pedido", target = "pedido")
-
-
+    @Mapping(source = "produtoRequest", target = "produto")
+    @Mapping(source = "pedidoRequest", target = "pedido")
 
     Itens_Pedido convertToItens(Itens_Request itensRequest);
 
     @Mapping(source = "id_Itens", target = "id_Itens")
     @Mapping(source = "quantidade", target = "quantidade")
     @Mapping(source = "totalItens", target = "valorItens")
-    @Mapping(source = "produto", target = "produto")
-    @Mapping(source = "pedido", target = "pedido")
+    @Mapping(source = "produtoResponse", target = "produto")
+    @Mapping(source = "pedidoResponse", target = "pedido")
 
     Itens_Response convertToItensResponse(Itens_Pedido itensPedido);
 
-    @Mapping(source = "quantidade", target = "quantidade")
-    @Mapping(source = "totalItens", target = "valorItens")
-    @Mapping(source = "produto", target = "produto")
-    @Mapping(source = "pedido", target = "pedido")
     List<Itens_Response> convertToListResponse(List<Itens_Pedido> itens_pedidoList);
 }

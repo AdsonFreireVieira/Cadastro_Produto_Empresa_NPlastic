@@ -1,20 +1,20 @@
 package com.NPlastic.dto.ItensDto;
 
-import com.NPlastic.Entity.Pedido;
-import com.NPlastic.Entity.Produto;
+import com.NPlastic.dto.DtoPedido.PedidoResponse;
+import com.NPlastic.dto.dtoProduto.ProdutoResponse;
 
 public class Itens_Response {
 
 
     private int quantidade;
 
-    private  int totalItens;
+    private int totalItens;
 
     private double valorItens;
 
-    private Produto produto;
+    private ProdutoResponse produtoResponse;
 
-    private Pedido pedido;
+    private PedidoResponse pedidoResponse;
 
     public Itens_Response() {
     }
@@ -43,19 +43,19 @@ public class Itens_Response {
         this.valorItens = valorItens;
     }
 
-    public Produto getProduto() {
-        return produto;
+    public ProdutoResponse getProdutoResponse() {
+        return produtoResponse;
     }
 
-    public void setProduto(Produto produto) {
-        this.produto = produto;
+    public void setProdutoResponse(ProdutoResponse produtoResponse) {
+        this.produtoResponse = produtoResponse;
     }
 
-    public Pedido getPedido() {
-        return pedido;
+    public PedidoResponse getPedidoResponse() {
+        return pedidoResponse;
     }
 
-    public void setPedido(Pedido pedido) {
-        this.pedido = pedido;
+    public void setPedidoResponse(PedidoResponse pedidoResponse) {
+        this.pedidoResponse = pedidoResponse;
     }
 }

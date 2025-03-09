@@ -1,35 +1,25 @@
 package com.NPlastic.dto.DtoPedido;
 
-
 import com.NPlastic.Entity.Clientes;
 import com.NPlastic.Entity.Itens_Pedido;
-import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.List;
 
-public class PedidoRequest {
-
-    private Integer Id;
+public class PedidoResponse {
 
     private LocalDate data;
 
-   private String status;
+    private String status;
 
 
     private List<Itens_Pedido> itens;
 
     private Clientes clientes;
 
-    public PedidoRequest() {
-    }
 
-    public Integer getId() {
-        return Id;
-    }
-
-    public void setId(Integer id) {
-        Id = id;
+    public PedidoResponse(LocalDate data) {
+        this.data = data;
     }
 
     public LocalDate getData() {

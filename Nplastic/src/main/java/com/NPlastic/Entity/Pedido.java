@@ -23,6 +23,10 @@ public class Pedido {
     @OneToMany(mappedBy = "pedido",cascade = CascadeType.ALL)
     private List<Itens_Pedido> itens;
 
+    @ManyToOne
+    @JoinColumn(name = "Cliente_id")
+    private Clientes clientes;
+
     public Integer getId() {
         return Id;
     }

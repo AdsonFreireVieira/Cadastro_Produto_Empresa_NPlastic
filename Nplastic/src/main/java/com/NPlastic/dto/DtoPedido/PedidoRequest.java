@@ -1,34 +1,33 @@
 package com.NPlastic.dto.DtoPedido;
 
-
-import com.NPlastic.Entity.Clientes;
 import com.NPlastic.dto.ItensDto.Itens_Request;
+import com.NPlastic.dto.dtoUser.ClientesRequestDTO;
 
 import java.time.LocalDate;
 import java.util.List;
 
 public class PedidoRequest {
 
-    private Integer Id;
+    private Integer id;
 
     private LocalDate data;
 
    private String status;
 
-
     private List<Itens_Request> itensRequestList;
 
-    private Clientes clientes;
+    private ClientesRequestDTO clientesRequest;
+
 
     public PedidoRequest() {
     }
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
     public LocalDate getData() {
@@ -55,11 +54,13 @@ public class PedidoRequest {
         this.itensRequestList = itensRequestList;
     }
 
-    public Clientes getClientes() {
-        return clientes;
+
+    public ClientesRequestDTO getClientesRequest() {
+        return clientesRequest;
     }
 
-    public void setClientes(Clientes clientes) {
-        this.clientes = clientes;
+    public void setClientesRequest(ClientesRequestDTO clientesRequest) {
+        this.clientesRequest = clientesRequest;
     }
+
 }

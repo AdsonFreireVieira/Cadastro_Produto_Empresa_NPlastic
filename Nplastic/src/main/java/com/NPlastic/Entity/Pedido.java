@@ -47,6 +47,14 @@ public class Pedido {
         return status;
     }
 
+    public Clientes getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(Clientes clientes) {
+        this.clientes = clientes;
+    }
+
     public void setStatus(String status) {
         this.status = status;
     }

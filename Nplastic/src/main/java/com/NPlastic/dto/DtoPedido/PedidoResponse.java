@@ -1,7 +1,9 @@
 package com.NPlastic.dto.DtoPedido;
 
-import com.NPlastic.Entity.Clientes;
-import com.NPlastic.Entity.Itens_Pedido;
+import com.NPlastic.dto.ItensDto.Itens_Request;
+import com.NPlastic.dto.ItensDto.Itens_Response;
+import com.NPlastic.dto.dtoUser.ClientesRequestDTO;
+import com.NPlastic.dto.dtoUser.ClientesResponseDTO;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -12,10 +14,9 @@ public class PedidoResponse {
 
     private String status;
 
+    private List<Itens_Response> itensResponseList;
 
-    private List<Itens_Pedido> itens;
-
-    private Clientes clientes;
+    private ClientesResponseDTO clientesResponse;
 
 
     public PedidoResponse(LocalDate data) {
@@ -38,19 +39,19 @@ public class PedidoResponse {
         this.status = status;
     }
 
-    public List<Itens_Pedido> getItens() {
-        return itens;
+    public List<Itens_Response> getItensResponseList() {
+        return itensResponseList;
     }
 
-    public void setItens(List<Itens_Pedido> itens) {
-        this.itens = itens;
+    public void setItensResponseList(List<Itens_Response> itensResponseList) {
+        this.itensResponseList = itensResponseList;
     }
 
-    public Clientes getClientes() {
-        return clientes;
+    public ClientesResponseDTO getClientesResponse() {
+        return clientesResponse;
     }
 
-    public void setClientes(Clientes clientes) {
-        this.clientes = clientes;
+    public void setClientesResponse(ClientesResponseDTO clientesResponse) {
+        this.clientesResponse = clientesResponse;
     }
 }

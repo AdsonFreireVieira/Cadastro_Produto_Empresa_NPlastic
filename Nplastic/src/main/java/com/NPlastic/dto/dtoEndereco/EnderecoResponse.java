@@ -2,10 +2,9 @@ package com.NPlastic.dto.dtoEndereco;
 
 
 import com.NPlastic.Entity.Clientes;
+import com.NPlastic.dto.dtoUser.ClientesResponseDTO;
 
 public class EnderecoResponse {
-
-
 
     private String numero;
 
@@ -17,7 +16,7 @@ public class EnderecoResponse {
 
     private String estado;
 
-    private Clientes cliente;
+    private ClientesResponseDTO clienteResponse;
 
     public String getNumero() {
         return numero;
@@ -59,11 +58,11 @@ public class EnderecoResponse {
         this.estado = estado;
     }
 
-    public Clientes getCliente() {
-        return cliente;
+    public ClientesResponseDTO getClienteResponse() {
+        return clienteResponse;
     }
 
-    public void setCliente(Clientes cliente) {
-        this.cliente = cliente;
+    public void setClienteResponse(ClientesResponseDTO clienteResponse) {
+        this.clienteResponse = clienteResponse;
     }
 }

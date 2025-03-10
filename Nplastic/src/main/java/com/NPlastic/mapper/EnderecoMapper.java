@@ -19,7 +19,7 @@ public interface EnderecoMapper {
  @Mapping(source = "cep", target = "cep")
  @Mapping(source = "cidade", target = "cidade")
  @Mapping(source = "bairro", target = "bairro")
- @Mapping(source = "cliente", target = "cliente")
+ @Mapping(source = "clienteRequest", target = "cliente")
  Endereco toEndereco(EnderecoRequest request);
 
 
@@ -27,7 +27,7 @@ public interface EnderecoMapper {
  @Mapping(source = "cep", target = "cep")
  @Mapping(source = "cidade", target = "cidade")
  @Mapping(source = "bairro", target = "bairro")
- @Mapping(source = "cliente", target = "cliente")
+ @Mapping(source = "cliente", target = "clienteResponse")
  EnderecoResponse toResponse(Endereco endereco);
 
  List<EnderecoResponse> toListResponse(List<Endereco> enderecoList);

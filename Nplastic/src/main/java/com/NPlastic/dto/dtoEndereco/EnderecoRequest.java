@@ -1,6 +1,7 @@
 package com.NPlastic.dto.dtoEndereco;
 
 import com.NPlastic.Entity.Clientes;
+import com.NPlastic.dto.dtoUser.ClientesRequestDTO;
 
 public class EnderecoRequest {
     private Integer id;
@@ -15,7 +16,8 @@ public class EnderecoRequest {
 
     private String estado;
 
-private Clientes cliente;
+private ClientesRequestDTO clienteRequest;
+
     public Integer getId() {
         return id;
     }
@@ -64,12 +66,12 @@ private Clientes cliente;
         this.estado = estado;
     }
 
-    public Clientes getCliente() {
-        return cliente;
+    public ClientesRequestDTO getClienteRequest() {
+        return clienteRequest;
     }
 
-    public void setCliente(Clientes cliente) {
-        this.cliente = cliente;
+    public void setClienteRequest(ClientesRequestDTO clienteRequest) {
+        this.clienteRequest = clienteRequest;
     }
 
     public EnderecoRequest() {
